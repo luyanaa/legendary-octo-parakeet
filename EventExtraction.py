@@ -8,10 +8,9 @@ tmin = -0.2  # start of each epoch (200ms before the trigger)
 tmax = 0.8  # end of each epoch (600ms after the trigger) - longest beat is 0.57s long
 detrend = 0 # remove dc
 
-# fname_raw = ['P01-raw.fif', 'P04-raw.fif', 'P05-raw.fif', 'P06-raw.fif', \
-#     'P07-raw.fif', 'P09-raw.fif', 'P11-raw.fif', 'P12-raw.fif', 'P13-raw.fif',
-#     'P14-raw.fif']
-fname_raw = ['P01-raw.fif', ]
+fname_raw = ['P01-raw.fif', 'P04-raw.fif', 'P05-raw.fif', 'P06-raw.fif', \
+    'P07-raw.fif', 'P09-raw.fif', 'P11-raw.fif', 'P12-raw.fif', 'P13-raw.fif',
+    'P14-raw.fif']
 mne_path = "~/repo/openmiir/eeg/mne"
 
 epoch = numpy.zeros([0, 52, 513])
@@ -41,8 +40,8 @@ for path in fname_raw:
         print(this_epochs.events[i])
 
     X = this_epochs.get_data() * 1000.0
-    print(y.shape)
-    print(X.shape)
+#     print(y.shape)
+#     print(X.shape)
 #     if label.shape == (0,):
 #        label = y
 #     else :
